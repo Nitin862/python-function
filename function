@@ -1,0 +1,595 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "c49b32fa-07c3-4516-89be-d8a297c7955c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Q1. Which keyword is used to create a function? Create a function to return a list of odd numbers in the\\nrange of 1 to 25.'"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''Q1. Which keyword is used to create a function? Create a function to return a list of odd numbers in the\n",
+    "range of 1 to 25.'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "d46d620a-4631-4294-90b7-7fe7ea09b57f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]\n"
+     ]
+    }
+   ],
+   "source": [
+    "def odd_numbers():\n",
+    "    return [num for num in range(1, 26) if num % 2 != 0]\n",
+    "print(odd_numbers())\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "354590cd-1f53-4d69-87d5-f0fdc3a24ee1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Q2. Why *args and **kwargs is used in some functions? Create a function each for *args and **kwargs\\nto demonstrate their use.'"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''Q2. Why *args and **kwargs is used in some functions? Create a function each for *args and **kwargs\n",
+    "to demonstrate their use.'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "4a899376-d50c-497c-8358-6b91fbde66ae",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'args and **kwargs are used in functions to allow for variable-length arguments.\\n\\n*args allows a function to accept any  nnumber of positional arguments, which are stored as a tuple.\\n**kwargs allows a function to accept any  n number of keyword arguments, which are stored in a dictionary.'"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''args and **kwargs are used in functions to allow for variable-length arguments.\n",
+    "\n",
+    "*args allows a function to accept any  nnumber of positional arguments, which are stored as a tuple.\n",
+    "**kwargs allows a function to accept any  n number of keyword arguments, which are stored in a dictionary.'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "72839160-d8aa-4044-a2d0-c470897adcff",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(23, 'nitin', 55, 23.5)"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "def args_demons(*args):\n",
+    "    return (args)\n",
+    "\n",
+    "args_demons(23,'nitin',55,23.5) #it can take n number of arguments despite of its data type\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "a0b2aaa9-d3b0-4e88-97f8-9a4bef5e101e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "name: Alice\n",
+      "age: 30\n",
+      "city: New York\n"
+     ]
+    }
+   ],
+   "source": [
+    "def kwarg_demons(**kwargs):\n",
+    "    for key, value in kwargs.items():\n",
+    "        print(f\"{key}: {value}\")\n",
+    "        \n",
+    "kwarg_demons(name=\"Alice\", age=30, city=\"New York\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "4dc674ca-772f-4e9d-beb7-950730c01c35",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Q3. What is an iterator in python? Name the method used to initialise the iterator object and the method\\nused for iteration. Use these methods to print the first five elements of the given list [2, 4, 6, 8, 10, 12, 14,\\n16, 18, 20].'"
+      ]
+     },
+     "execution_count": 18,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''Q3. What is an iterator in python? Name the method used to initialise the iterator object and the method\n",
+    "used for iteration. Use these methods to print the first five elements of the given list [2, 4, 6, 8, 10, 12, 14,\n",
+    "16, 18, 20].'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "6b016e8c-a88d-4af5-9ac3-16e18e9dfba1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'n iterator in Python is an object that contains a countable number of values and can be iterated upon, meaning you can traverse through \\nall the values. \\nIterators implement two methods: __iter__() to initialize the iterator object and __next__() to iterate through the elements.'"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''n iterator in Python is an object that contains a countable number of values and can be iterated upon, meaning you can traverse through \n",
+    "all the values. \n",
+    "Iterators implement two methods: __iter__() to initialize the iterator object and __next__() to iterate through the elements.'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "b1ce5eae-4d1d-4013-af66-40619f97a5f9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n",
+      "4\n",
+      "6\n",
+      "8\n",
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "l = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]\n",
+    "\n",
+    "iterator = iter(l)\n",
+    "for i in range(5):\n",
+    "    print(next(iterator))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "bf24a004-c9fd-4b17-b0be-60111c8d69c7",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Q4. What is a generator function in python? Why yield keyword is used? Give an example of a generator\\nfunction.'"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''Q4. What is a generator function in python? Why yield keyword is used? Give an example of a generator\n",
+    "function.'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "8e59e353-ffff-4cb0-8180-04b73eb9cb04",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'A generator function in Python is a special type of function that returns an iterator, which we can iterate over (one value at a time). \\nGenerators are written using regular function syntax but use the yield keyword instead of return to return values. The yield keyword allows\\nthe function to return a value and later resume to continue executing from where it left off, maintaining its state between calls.\\n\\nWhy yield is used\\nMemory Efficiency: Generators do not store all the values in memory; they generate values on the fly.\\nRepresenting Infinite Sequences: Generators are useful for representing infinite sequences, like streams of data or large ranges.\\nState Preservation: The state of the function is preserved between yield calls, making them useful for stateful iterators.'"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''A generator function in Python is a special type of function that returns an iterator, which we can iterate over (one value at a time). \n",
+    "Generators are written using regular function syntax but use the yield keyword instead of return to return values. The yield keyword allows\n",
+    "the function to return a value and later resume to continue executing from where it left off, maintaining its state between calls.\n",
+    "\n",
+    "Why yield is used\n",
+    "Memory Efficiency: Generators do not store all the values in memory; they generate values on the fly.\n",
+    "Representing Infinite Sequences: Generators are useful for representing infinite sequences, like streams of data or large ranges.\n",
+    "State Preservation: The state of the function is preserved between yield calls, making them useful for stateful iterators.'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "99dc0916-382c-4c1b-b4eb-8240d63c904e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<generator object generate_odd_numbers at 0x7f90a5b31fc0>\n"
+     ]
+    }
+   ],
+   "source": [
+    "def generate_odd_numbers(n):\n",
+    "    num = 1\n",
+    "    count = 0\n",
+    "    while count < n:\n",
+    "        yield num\n",
+    "        num += 2\n",
+    "        count += 1\n",
+    "\n",
+    "odd_numbers_generator = generate_odd_numbers(5)\n",
+    "\n",
+    "for odd_number in odd_numbers_generator:\n",
+    "    print(odd_number)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "6116b94c-0444-496e-81b7-a5d0a85f76a7",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Q5. Create a generator function for prime numbers less than 1000. Use the next() method to print the\\nfirst 20 prime numbers.'"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''Q5. Create a generator function for prime numbers less than 1000. Use the next() method to print the\n",
+    "first 20 prime numbers.'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "08a45608-1c65-4784-a10e-e825d6e1c4c7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n",
+      "3\n",
+      "5\n",
+      "7\n",
+      "11\n",
+      "13\n",
+      "17\n",
+      "19\n",
+      "23\n",
+      "29\n",
+      "31\n",
+      "37\n",
+      "41\n",
+      "43\n",
+      "47\n",
+      "53\n",
+      "59\n",
+      "61\n",
+      "67\n",
+      "71\n"
+     ]
+    }
+   ],
+   "source": [
+    "def prime_generator(limit=1000):\n",
+    "    primes = []\n",
+    "    num = 2\n",
+    "    while num < limit:\n",
+    "        is_prime = all(num % p != 0 for p in primes)\n",
+    "        if is_prime:\n",
+    "            primes.append(num)\n",
+    "            yield num\n",
+    "        num += 1\n",
+    "\n",
+    "\n",
+    "prime_gen = prime_generator()\n",
+    "\n",
+    "\n",
+    "for _ in range(20):\n",
+    "    print(next(prime_gen))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "276d7517-e25e-47fe-9eb8-ee8387584ecb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Q6. Write a python program to print the first 10 Fibonacci numbers using a while loop.'"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''Q6. Write a python program to print the first 10 Fibonacci numbers using a while loop.'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "576785e0-e7fd-44bc-a298-96b16df33d07",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0\n",
+      "1\n",
+      "1\n",
+      "2\n",
+      "3\n",
+      "5\n",
+      "8\n",
+      "13\n",
+      "21\n",
+      "34\n"
+     ]
+    }
+   ],
+   "source": [
+    "a, b = 0, 1\n",
+    "count = 0\n",
+    "n = 10  \n",
+    "\n",
+    "while count < n:\n",
+    "    print(a)\n",
+    "    a, b = b, a + b\n",
+    "    count += 1\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "21b89b07-37cf-43c4-b224-313273b7ef1e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Q7. Write a List Comprehension to iterate through the given string: ‘pwskills’.\\nExpected output: ['p', 'w', 's', 'k', 'i', 'l', 'l', 's']\""
+      ]
+     },
+     "execution_count": 32,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''Q7. Write a List Comprehension to iterate through the given string: ‘pwskills’.\n",
+    "Expected output: ['p', 'w', 's', 'k', 'i', 'l', 'l', 's']'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "73c6dbe9-1bb4-44ce-9639-87e72d791150",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['p', 'w', 's', 'k', 'i', 'l', 'l', 's']\n"
+     ]
+    }
+   ],
+   "source": [
+    "string = 'pwskills'\n",
+    "l=[]\n",
+    "for i in string :\n",
+    "    l.append(i)\n",
+    "print(l)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "dd2000a0-a195-4c99-9ed0-4c74a01960fe",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Q8. Write a python program to check whether a given number is Palindrome or not using a while loop.'"
+      ]
+     },
+     "execution_count": 34,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''Q8. Write a python program to check whether a given number is Palindrome or not using a while loop.'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "f1ccb3ed-3c17-429f-9436-e1cc5a288e19",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter a number:  33\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "33 is a palindrome.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def is_palindrome(number):\n",
+    "    original_number = number\n",
+    "    reversed_number = 0\n",
+    "\n",
+    "    while number > 0:\n",
+    "        digit = number % 10\n",
+    "        reversed_number = reversed_number * 10 + digit\n",
+    "        number = number // 10\n",
+    "\n",
+    "    return original_number == reversed_number\n",
+    "\n",
+    "number = int(input(\"Enter a number: \"))\n",
+    "if is_palindrome(number):\n",
+    "    print(f\"{number} is a palindrome.\")\n",
+    "else:\n",
+    "    print(f\"{number} is not a palindrome.\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "3be57790-509b-4aa3-bfe2-f60bd267eb16",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'9Q9. Write a code to print odd numbers from 1 to 100 using list comprehension.'"
+      ]
+     },
+     "execution_count": 36,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'''9Q9. Write a code to print odd numbers from 1 to 100 using list comprehension.'''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "c5012373-4e02-46e8-a1df-d4db9ea69822",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99]\n"
+     ]
+    }
+   ],
+   "source": [
+    "odd_numbers = [num for num in range(1, 101) if num % 2 != 0]\n",
+    "print(odd_numbers)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "94a66949-b06d-42cd-9ffb-c183495809ea",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
